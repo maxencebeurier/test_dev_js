@@ -1,0 +1,24 @@
+#conteneur{
+	width: 700px;
+	margin:auto;
+	margin-top: 70px;
+	text-align: center;
+}
+#conteneur .depot div{
+	display: inline-block;
+	width: 400px;
+}
+
+#conteneur .depot button{
+	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+}
+#conteneur .depot{
+	width: 700px;
+	margin-top: 40px;
+}

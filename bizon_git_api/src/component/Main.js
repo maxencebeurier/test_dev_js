@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Github from '../api/github.js';
 import Depot from './Depot.js';
+import '../css/main.css';
 export default class Main extends Component{
 	constructor(props){
 		super(props);
@@ -37,7 +38,7 @@ export default class Main extends Component{
 
 	render(){
 		return(
-			<div>
+			<div id='conteneur'>
 				<form onSubmit={this.handleSubmit}>
 				  <label>
 				    Saisissez le nom du dépot :
