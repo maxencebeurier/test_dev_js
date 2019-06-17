@@ -4,7 +4,13 @@ export default class Github{
   			fetch("https://api.github.com/search/repositories?q="+searchString, {
 		    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
 		  	})
-		   .then(response => response.json())
+		   .then(response => {
+		   		if(response.status===200){
+		   			return response.json();
+		   		}else{
+		   			return false;
+		   		}
+			})
 		   .then(data => resolve(data));
   		});
 	}

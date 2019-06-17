@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import Info from './Info.js';
 export default class Depot extends Component{
 	constructor(props){
 		super(props);
@@ -14,26 +14,29 @@ export default class Depot extends Component{
 		let info=[];
 		if(this.state.display===true){
 			let i=0;
-			for(let property in this.props.data){
-				//ne fonctionne pas dans tout les cas pourquoi ?
-				/*if(property==="license"){
-					info.push(
-						<div key={i}>{property+":"+this.props.data[property]['name']}</div>
-					);
-				}else if(property==="owner"){
-					info.push(
-						<div key={i}>{property+":"+this.props.data[property]['login']}</div>
-					);
+			let tab=[];
+			for (var prop in this.props.data) {
+				//les licences et les propriétaires ont besoin d'un traitement pour etre affiché
+				if(prop==='license'){
+					if(this.props.data[prop]!=null){
+						tab.push(<Info key={i} name={prop} value={this.props.data[prop]['name']} />);
+					}else{
+						tab.push(<Info key={i} name={prop} value={'null'} />);
+					}
+				}else if(prop==='owner'){
+					if(this.props.data[prop]!=null){
+						tab.push(<Info key={i} name={prop} value={this.props.data[prop]['login']} />);
+					}else{
+						tab.push(<Info key={i} name={prop} value={'null'} />);
+					}
+				}else{
+					tab.push(<Info key={i} name={prop} value={this.props.data[prop]} />);
 				}
-				else{*/
-					info.push(
-					<div key={i}>{property+":"+this.props.data[property]}</div>
-					);
-				//}
-				
-				
 				i++;
 			}
+			let tbody=[];
+			tbody.push(<tbody key={this.props.data['id']}>{tab}</tbody>);
+			info.push(<table key={this.props.data['id']}>{tbody}</table>);
 		}
 		return info;
 	}

@@ -1,12 +1,31 @@
 #conteneur{
-	width: 700px;
+	width: auto;
 	margin:auto;
 	margin-top: 70px;
 	text-align: center;
 }
+#conteneur header{
+	font-size: 50px;
+}
+#conteneur form{
+	margin-top: 30px;
+}
+#conteneur form label{
+	margin-right: 20px;
+	display: inline-block;
+}
+#conteneur form label div{
+	margin:auto;
+	margin-right: 10px;
+}
+#conteneur .depot{
+	display: inline-block;
+	margin:auto;
+}
+
 #conteneur .depot div{
 	display: inline-block;
-	width: 400px;
+	width: 300px;
 }
 
 #conteneur .depot button{
@@ -19,6 +38,12 @@
   	font-size: 16px;
 }
 #conteneur .depot{
-	width: 700px;
-	margin-top: 40px;
+	width: 1000px;
+	margin-top: 20px;
+}
+#conteneur .depot .name{
+	width: 200px;
+}
+#conteneur .depot .info{
+	height: 50px;
 }
